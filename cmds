@@ -1,0 +1,2 @@
+history 0 | awk '$2 == "git" { print $3 }' | sort | uniq -c | sort -nr > count.txt
+awk 'FNR==NR { cc[FNR] = $1; } FNR!=NR { $1 = cc[FNR] + $1; print; }' count1.txt count2.txt
